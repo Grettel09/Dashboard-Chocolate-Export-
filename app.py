@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# URLs de los archivos CSV
+# URLs de los archivos CSV (cambia TU_USUARIO por tu usuario de GitHub)
 clientes_url = "https://raw.githubusercontent.com/TU_USUARIO/Dashboard-ChocolateExport/main/clientes.csv"
 mercados_url = "https://raw.githubusercontent.com/TU_USUARIO/DashboardChocolate-Export/main/mercados.csv"
 exportaciones_url = "https://raw.githubusercontent.com/TU_USUARIO/DashboardChocolate-Export/main/exportaciones.csv"
@@ -14,17 +14,17 @@ mercados = pd.read_csv(mercados_url)
 exportaciones = pd.read_csv(exportaciones_url)
 barreras = pd.read_csv(barreras_url)
 
-# Título del Dashboard
-st.title("Dashboard Interactivo de Exportaciones de Chocolates")
-
-# Encabezado institucional formateado para Streamlit
+# Mostrar encabezado con markdown para texto
 st.markdown("""
 **UNIVERSIDAD NACIONAL DE COSTA RICA**  
 FACULTAD DE CIENCIAS SOCIALES  
 ESCUELA DE RELACIONES INTERNACIONALES  
 COMERCIO Y NEGOCIOS INTERNACIONALES  
-**DASHBOARD INTERACTIVO**
+DASHBOARD INTERACTIVO
 """)
+
+# Título del Dashboard
+st.title("Dashboard Interactivo de Exportaciones de Chocolates")
 
 # Filtro de país
 paises = exportaciones["País"].unique()
